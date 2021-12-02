@@ -205,3 +205,19 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  notice:
+    register: "本を登録しました。"
+    destroy: "削除しました。"
+    update: "更新しました。"
+    confirm_destroy: '削除します。よろしいですか？'
+  link:
+    show: '詳細'
+    edit: '編集'
+    destroy: '削除'
+    new_book: '新規作成'
+    back: '戻る'
+  title:
+    books: '本一覧'
+    new_book: '新規作成'
+    edit_book: '編集'
+
