@@ -1,0 +1,9 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to 'fjord-books-app', books_path, class: 'navbar-brand' %>
+    <%= link_to 'ホーム', books_path, class: "nav-link" %>
+    <% if user_signed_in? %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+    <% end %>
+  </div>
+</nav>
