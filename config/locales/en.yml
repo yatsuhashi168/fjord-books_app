@@ -31,3 +31,22 @@
 
 en:
   hello: "Hello world"
+  common:
+    notice:
+      register: '%{subject} was successfully created.'
+      destroy: '%{subject} was successfully destroyed.'
+      update: '%{subject} was successfully updated.'
+      confirm_destroy: 'Are you sure?'
+    link:
+      show: 'Show'
+      edit: 'Edit'
+      destroy: 'Destroy'
+      new_book: 'New Book'
+      back: 'Back'
+  books:
+    index:
+      title: 'Books'
+    new:
+      title: 'New Book'
+    edit:
+      title: 'Editing Book'
