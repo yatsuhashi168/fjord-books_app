@@ -12,6 +12,11 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
   <%= render 'devise/registrations/profile_fields', f: f %>
 
   <div class="field">
