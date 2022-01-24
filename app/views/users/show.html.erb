@@ -29,9 +29,21 @@
   <strong><%= User.human_attribute_name(:avatar) %>:</strong>
   <% if @user.avatar.attached? %>
     <br>
-    <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150])%>
+    <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150]) %>
   <% end %>
 </p>
+
+<% if @user != current_user %>
+  <% if current_user.following?(@user) %>
+    <p>
+      <%= link_to 'フォロー解除', %>
+    </p>
+  <% else %>
+    <p>
+      <%= link_to 'フォロー', follow_relationships_path(id: @user), method: :post %>
+    </p>
+  <% end %>
+<% end %>
 
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
