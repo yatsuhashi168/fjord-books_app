@@ -33,17 +33,23 @@
   <% end %>
 </p>
 
-<% if @user.followings.any? %>
-  <p>
-    <%= link_to 'フォロー', user_followings_path(@user) %>(<%= @user.followings.count %>)
-  </p>
-<% end %>
+<p>
+  <% if @user.followings.any? %>
+    <%= link_to 'フォロー', user_followings_path(@user) %>
+  <% else %>
+    フォロー
+  <% end %>
+  (<%= @user.followings.count %>)
+</p>
 
-<% if @user.followers.any? %>
-  <p>
-    <%= link_to 'フォロワー', user_followers_path(@user) %>(<%= @user.followers.count %>)
-  </p>
-<% end %>
+<p>
+  <% if @user.followers.any? %>
+    <%= link_to 'フォロワー', user_followers_path(@user) %>
+  <% else %>
+    フォロワー
+  <% end %>
+  (<%= @user.followers.count %>)
+</p>
 
 <% if @user != current_user %>
   <% if current_user.following?(@user) %>
