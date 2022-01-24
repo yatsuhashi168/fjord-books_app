@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :books
   resources :users, only: %i(index show)
   scope module: :users do
-    resources :follow_relationships, only: :create
+    resources :follow_relationships, only: %i(create destroy)
   end
 end
