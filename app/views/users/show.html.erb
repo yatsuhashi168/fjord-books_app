@@ -33,14 +33,18 @@
   <% end %>
 </p>
 
+<p>
+  <%= link_to 'フォロー', user_followings_path(@user) %>
+</p>
+
 <% if @user != current_user %>
   <% if current_user.following?(@user) %>
     <p>
-      <%= link_to 'フォロー解除', follow_relationship_path(id: @user), method: :delete %>
+      <%= link_to 'フォロー解除', users_follow_relationship_path(id: @user), method: :delete %>
     </p>
   <% else %>
     <p>
-      <%= link_to 'フォロー', follow_relationships_path(id: @user), method: :post %>
+      <%= link_to 'このユーザーをフォロー', users_follow_relationships_path(id: @user), method: :post %>
     </p>
   <% end %>
 <% end %>
