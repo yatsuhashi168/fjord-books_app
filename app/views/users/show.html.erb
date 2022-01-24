@@ -33,9 +33,11 @@
   <% end %>
 </p>
 
-<p>
-  <%= link_to 'フォロー', user_followings_path(@user) %>
-</p>
+<% if @user.followings.any? %>
+  <p>
+    <%= link_to 'フォロー', user_followings_path(@user) %>
+  </p>
+<% end %>
 
 <% if @user != current_user %>
   <% if current_user.following?(@user) %>
