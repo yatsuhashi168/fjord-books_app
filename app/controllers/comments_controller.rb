@@ -9,16 +9,16 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to @commentable, notice: 'Comment was successfully created.'
+      redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
-      redirect_to @commentable, alert: 'コメントを作成できませんでした。'
+      redirect_to @commentable, status: :unprocessable_entity
     end
   end
 
   # DELETE /comments/1 or /comments/1.json
   def destroy
     @comment.destroy
-    redirect_to @commentable, notice: 'Comment was successfully destroyed.'
+    redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private
