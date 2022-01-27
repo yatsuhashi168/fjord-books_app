@@ -15,7 +15,7 @@
     <tr>
       <td><%= comment.body %></td>
       <td><%= comment.user.name %></td>
-      <td><%= comment.created_at %></td>
+      <td><%= l comment.created_at, format: :long %></td>
       <% if comment.user == current_user %>
         <td><%= link_to 'Destroy', [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
