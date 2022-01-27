@@ -17,6 +17,10 @@
   <strong>Body:</strong>
   <%= @report.body %>
 </p>
+
+<%= render 'comments/index', commentable: @report %>
+<%= render 'comments/form', commentable: @report %>
+
 <% if @report.user == current_user %>
   <%= link_to 'Edit', edit_report_path(@report) %> |
 <% end %>
