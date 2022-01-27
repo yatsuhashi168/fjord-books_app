@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[ show edit update destroy ]
+  before_action :set_comment, only: :destroy
 
   # POST /comments or /comments.json
   def create
@@ -7,7 +9,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to @commentable, notice: "Comment was successfully created."
+      redirect_to @commentable, notice: 'Comment was successfully created.'
     else
       redirect_to @commentable, alert: 'コメントを作成できませんでした。'
     end
@@ -16,7 +18,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1 or /comments/1.json
   def destroy
     @comment.destroy
-    redirect_to @commentable, notice: "Comment was successfully destroyed."
+    redirect_to @commentable, notice: 'Comment was successfully destroyed.'
   end
 
   private
