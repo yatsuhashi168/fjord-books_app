@@ -1,11 +1,11 @@
-<h2>Comments</h2>
+<h2><%= Comment.model_name.human %></h2>
 
 <table>
   <thead>
   <tr>
-    <th>Body</th>
-    <th>User</th>
-    <th>Date</th>
+    <th><%= Comment.human_attribute_name(:body) %></th>
+    <th><%= Comment.human_attribute_name(:user) %></th>
+    <th><%= Comment.human_attribute_name(:date) %></th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -17,7 +17,7 @@
       <td><%= comment.user.name %></td>
       <td><%= l comment.created_at, format: :long %></td>
       <% if comment.user == current_user %>
-        <td><%= link_to 'Destroy', [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('views.common.destroy'), [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
     </tr>
   <% end %>

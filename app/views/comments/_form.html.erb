@@ -1,7 +1,7 @@
 <%= form_with(model: [commentable, Comment.new]) do |form| %>
 
   <div class="field">
-    <%= form.label :コメント %>
+    <%= form.label Comment.model_name.human %>
     <%= form.text_field :body, required: true %>
   </div>
 
