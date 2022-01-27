@@ -13,6 +13,6 @@ Rails.application.routes.draw do
     resources :comments, module: 'books'
   end
   resources :reports do
-    resources :comments
+    resources :comments, module: 'reports'
   end
 end
