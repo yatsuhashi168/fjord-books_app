@@ -7,8 +7,7 @@ class Users::FollowRelationshipsController < ApplicationController
     if @follow_relationship.save
       redirect_to user_url(params[:id])
     else
-      flash[:alert] = 'フォローできませんでした'
-      redirect_to root_url
+      redirect_to root_url, alert: 'フォローできませんでした'
     end
   end
 
