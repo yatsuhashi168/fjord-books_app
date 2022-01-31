@@ -12,6 +12,6 @@ class User < ApplicationRecord
   has_many :followers, through: :followed_relationships, source: :follower
 
   def following?(other_user)
-    followings.include?(other_user)
+    followings.exists?(other_user.id)
   end
 end

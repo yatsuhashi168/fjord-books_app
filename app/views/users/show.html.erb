@@ -43,7 +43,7 @@
 </p>
 
 <p>
-  <% if @user.followers.any? %>
+  <% if @user.followers.exists? %>
     <%= link_to 'フォロワー', user_followers_path(@user) %>
   <% else %>
     フォロワー
