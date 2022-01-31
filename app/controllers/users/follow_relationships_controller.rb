@@ -12,7 +12,7 @@ class Users::FollowRelationshipsController < ApplicationController
   end
 
   def destroy
-    @follow_relationship = current_user.following_relationships.find_by(followed_id: params[:id])
+    @follow_relationship = current_user.following_relationships.find_by!(followed_id: params[:id])
     @follow_relationship.destroy
     redirect_to user_url(params[:id])
   end
