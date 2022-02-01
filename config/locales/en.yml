@@ -235,6 +235,8 @@ en:
     application:
       menu: Menu
       sign_in_as: "Sign-in as %{email}"
+  follow:
+    could_not_follow: "could not follow the user"
   # devise-i18n-viewsをオーバーライド
   devise:
     registrations:
