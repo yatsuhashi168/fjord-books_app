@@ -233,6 +233,8 @@ ja:
     application:
       menu: メニュー
       sign_in_as: "%{email} としてログイン中"
+  follow:
+    could_not_follow: 'フォローできませんでした'
   # devise-i18n-viewsをオーバーライド
   devise:
     registrations:
