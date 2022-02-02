@@ -2,10 +2,10 @@
 
 report_a:
   user: Alice
-  title: MyString
-  content: MyText
+  title: Aliceの日報
+  content: Aliceの内容
 
 report_b:
   user: Bob
-  title: MyString
-  content: MyText
+  title: Bobの日報
+  content: Bobの内容
