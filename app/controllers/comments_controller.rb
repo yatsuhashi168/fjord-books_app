@@ -2,6 +2,7 @@
 
 class CommentsController < ApplicationController
   before_action :set_comment, only: :destroy
+  before_action :correct_user, only: :destroy
 
   # POST /comments or /comments.json
   def create
@@ -31,5 +32,9 @@ class CommentsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def comment_params
     params.require(:comment).permit(:body, :user_id, :commentable_id)
+  end
+
+  def correct_user
+    redirect_to root_url if current_user != @comment.user
   end
 end
