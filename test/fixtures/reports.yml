@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-report_a:
-  user: Alice
+alice_report:
+  user: alice
   title: Aliceの日報
   content: Aliceの内容
 
-report_b:
-  user: Bob
+bob_report:
+  user: bob
   title: Bobの日報
   content: Bobの内容
